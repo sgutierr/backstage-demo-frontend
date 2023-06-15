@@ -7,11 +7,12 @@
     "role": "frontend"
   },
   "scripts": {
-    "start": "backstage-cli package start",
-    "build": "backstage-cli package build",
-    "clean": "backstage-cli package clean",
-    "test": "backstage-cli package test",
-    "lint": "backstage-cli package lint",
+    "clinstall": "npm i @backstage/cli",
+  "start": "(npm run clinstall && backstage-cli package start) || backstage-cli package start",
+    "build": "(npm run clinstall && backstage-cli package build) || backstage-cli package build",
+    "lint": "(npm run clinstall && backstage-cli package lint) || backstage-cli package lint",
+    "test": "(npm run clinstall && backstage-cli package test) || backstage-cli package test",
+    "clean": "(npm run clinstall && backstage-cli package clean) || backstage-cli package clean",
     "test:e2e": "cross-env PORT=3001 start-server-and-test start http://localhost:3001 cy:dev",
     "test:e2e:ci": "cross-env PORT=3001 start-server-and-test start http://localhost:3001 cy:run",
     "cy:dev": "cypress open",
