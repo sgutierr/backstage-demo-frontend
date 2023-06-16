@@ -13,8 +13,8 @@ backend:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
   baseUrl: http://backstage-demo-backend.appdev-backstage.svc.cluster.local:8080
-  listen:
-    port: 7007
+  # listen:
+  #  port: 7007
     # Uncomment the following host directive to bind to specific interfaces
     # host: 127.0.0.1
   csp:
